@@ -1,409 +1,467 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bus | Ticket</title>
-    <!-- Google_fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Daisy-UI -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    
- <script>
-module.exports = {
-  content: [],
-  theme: {
-    extend: {
-      fontFamily: {
-        'raleway': "Raleway",
-        'inter': "Inter",
-      },
-      colors: {
-        "primay-color": "#eee",
-      },
-    },
-  },
-  plugins: [],
-};
-    </script>
-
-
-  </head>
-  <body class="font-[raleway] text-primay-color">
-    <header class="py-5">
-      <nav class="relative w-11/12 md:w-10/12 mx-auto flex justify-between items-center px-4  sm:px-0">
-        <h3 class="font-bold text-2xl md:text-3xl">P-Ticket</h3>
-        <ul class="hidden md:visible md:flex items-center gap-6 text-lg capitalize font-semibold">
-          <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">home</a></li>
-          <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">about</a></li>
-          <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">destination</a></li>
-          <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">search</a></li>
-        </ul>
-        <div class="flex items-center gap-2">
-          <button
-            class="flex items-center gap-2 px-3 md:py-1 md:px-4 rounded-md bg-green-100 border border-green-400"
-          >
-            <span class="text-green-600 text-lg font-semibold">Bus</span
-            ><img class="w-5 pt-1" src="./images/bus-icon.png" alt="" />
-          </button>
-          <div class="relative">
-            <button id="open_menu" class="md:hidden py-1 px-3 rounded-md bg-green-100 border border-green-400"><span class="">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
-                  </svg>
-              </span>
-              </button>
-              <button id="close_menu" class="hidden absolute left-0 py-1 px-3 rounded-md bg-green-100 border border-green-400"><span class=""></span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                  </svg>                  
-              </span>
-              </button>
-          </div>
-        </div>
-        <!-- Mobile menu -->
-        <div id="mobile_menu" class="hidden absolute right-0 top-12 w-11/12 rounded-md bg-base-200 p-4">
-            <ul class="flex flex-col items-center gap-2 text-lg capitalize font-semibold">
-                <li class="w-full text-center"><a class="rounded-md bg-green-500 py-1 block hover:bg-green-400 transition-colors duration-200 ease-out" href="#">home</a></li>
-                <li class="w-full text-center"><a class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out" href="#">about</a></li>
-                <li class="w-full text-center"><a class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out" href="#">destination</a></li>
-                <li class="w-full text-center"><a class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out" href="#">search</a></li>
-              </ul>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-        <section class="py-10">
-          <div class="hero w-11/12 sm:w-10/12 lg:w-9/12 mx-auto">
-          <div class="bg-opacity-60">
-            <img class="w-full" src="./images/banner.png" alt="">
-          </div>
-          <div class="hero-content text-neutral-content text-center">
-            <div class="py-10">
-              <h1 class="mb-5 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold">End-to-End Travel with <span class="text-green-400">P Paribahan</span></h1>
-              <p class="mb-5">
-                Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
-              </p>
-              <button class="rounded-lg text-stone-800 py-2 font-semibold px-4 bg-green-400 border-none">Buy Tickets</button>
-            </div>
-          </div>
-        </div>
-        </section>
-
-        <section class="w-9/12 md:w-8/12 mx-auto hidden sm:block -mt-20 relative z-10">
-          <div class="grid grid-cols-3 gap-5">
-
-            <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
-              <img class="w-10" src="./images/people.png" alt="">
-              <div>
-                <h2 class="text-2xl font-bold">500k+</h2>
-                <p class="font-semibold text-gray-500">Registered users</p>
-              </div>
-            </div>
-
-            <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
-              <img class="w-10" src="./images/ticket-cupon.png" alt="">
-              <div>
-                <h2 class="text-2xl font-bold">1.7 Lacks</h2>
-                <p class="font-semibold text-gray-500">Ticket sold</p>
-              </div>
-            </div>
-
-          <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
-            <img class="w-10" src="./images/stoppage.png" alt="">
-            <div>
-              <h2 class="text-2xl font-bold">80k+</h2>
-              <p class="font-semibold text-gray-500">Rental partners</p>
-            </div>
-          </div>
-          </div>
-        </section>
-
-
-        <!-- Best offer -->
-         <section>
-          <div class="w-11/12 sm:w-10/12 md:w-8/12 mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 mt-6 ">Best offers for you</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div class="relative flex items-center justify-between rounded-lg bg-orange-300 p-5">
-                <div class="">
-                  <h3 class="font-bold text-2xl">15% OFF</h3>
-                  <p class="font-semibold">on your next purchase</p>
-                  <span class="text-sm text-gray-600">use by January 2024</span>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold">NEW 15</h3>
-                  <span class="text-gray-500">Coupon code</span>
-                </div>
-                <div class="flex flex-col items-center justify-center absolute right-36 h-full gap-4">
-                  <div class="w-7 h-7 rounded-full bg-white absolute -top-4"></div>
-                  <div class="border-2 border-white border-dashed absolute h-full"></div>
-                  <div class="w-7 h-7 rounded-full bg-white absolute -bottom-4"></div>
-              </div>
-
-
-            </div>
-
-            <div class="relative flex items-center justify-between rounded-lg bg-pink-400 p-5">
-              <div class="">
-                <h3 class="font-bold text-2xl">20% OFF</h3>
-                <p class="font-semibold">on your next purchase</p>
-                <span class="text-sm text-gray-600">use by January 2024</span>
-              </div>
-              <div>
-                <h3 class="text-2xl font-bold">Couple 20</h3>
-                <span class="text-gray-500">Coupon code</span>
-              </div>
-              <div class="flex flex-col items-center justify-center absolute right-36 h-full gap-4">
-                <div class="w-7 h-7 rounded-full bg-white absolute -top-4"></div>
-                <div class="border-2 border-white border-dashed absolute h-full"></div>
-                <div class="w-7 h-7 rounded-full bg-white absolute -bottom-4"></div>
-            </div>
-          </div>
-          </div>
-          <div class="my-4 flex items-center justify-center"><button class="py-2 px-4 font-semibold text-green-500 rounded-lg border border-green-400">See All Offers</button></div>
-          </div>
-         </section>
-
-
-
-         <!-- P.H paribahan -->
-          <section class="bg-gray-100 border-t-2 rounded-t-3xl border-t-green-500 py-12">
-            <div class="w-11/12 sm:w-10/12 md:w-9/12 mx-auto">
-              <h2 class="text-center font-bold text-3xl">P.H Paribahan</h2>
-              <p class="text-center mt-2 text-gray-600">Yes, you can run unit tests and view the results directly within the app. The integrated <br> testing features allow for a streamlined .</p>
-              <div class="bg-white relative rounded-xl p-5 pr-7 flex items-center justify-between mt-8 gap-3">
-                <div class="">
-                  <div class="flex items-center justify-between mb-4">
-                  <div class="flex items-center gap-3">
-                    <img class="w-16" src="./images/bus-logo.png" alt="">
-                    <div>
-                      <h4 class="font-bold text-xl mb-1">GreenLine Paribahan</h4>
-                      <p class="text-gray-600">Coach-009-WEB | AC_Business</p>
-                    </div>
-                  </div>
-                  <div class="flex font-semibold items-center py-2 px-3 rounded-md text-green-600 bg-green-200 gap-1">
-                    <img class="w-6" src="./images/seat-green.png" alt="">
-                    <span>40</span>
-                    <span>Seats left</span>
-                  </div>
-                </div>
-                <div class="bg-gray-100 rounded-lg p-5">
-                  <div class="flex items-center justify-between border-b-2 border-dashed py-3">
-                    <span>Route</span>
-                    <span>Dhaka-Sylhet</span>
-                  </div>
-                  <div class="flex items-center justify-between border-b-2 border-dashed py-3">
-                    <span>Departure Time</span>
-                    <span>8.00 pm</span>
-                  </div>
-                  <div class="flex items-center gap-3 mt-4">
-                    <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
-                      Boarding Point-Laxmipur
-                    </div>
-                    <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
-                      Boarding Point-Laxmipur
-                    </div>
-                    <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
-                      Boarding Point-Laxmipur
-                    </div>
-                  </div>
-                </div>
-                </div>
-        
-                <div class="flex flex-col items-center gap-1 justify-center">
-                  <img class="w-8" src="./images/fare.png" alt="">
-                  <h4 class="text-xl font-bold">550 Taka</h4>
-                  <span class="text-gray-600">Per Seat</span>
-                  
-                </div>
-
-                <!--  -->
-                <div class="hidden xl:block absolute right-1/4 h-full">
-                  <span class="w-8 h-8 rounded-full bg-gray-100 absolute z-10 -top-4"></span>
-                  <p class="border-2 border-dashed absolute bg-gray-50 left-3 h-full"></p>
-                  <span class="w-8 h-8 rounded-full bg-gray-100 absolute z-10 -bottom-4"></span>
-                  
-                </div>
-              </div>
-              
-
-
-              <div class="bg-white p-6 rounded-lg grid grid-cols-3 gap-8 mt-10">
-                <div class="col-span-2">
-                  <h3 class="capitalize font-semibold border-b-2 border-dashed pb-3">Select your seat</h3>
-                  <div class="border-b-2 border-dashed py-3 flex items-center justify-between">
-                    <div class="flex items-center gap-1">
-                      <img src="./images/seat-gray.png" alt="">
-                      <span class="text-gray-500">Available</span>
-                    </div>
-                    <div class="flex items-center gap-1">
-                      <img src="./images/seat-green-filled.png" alt="">
-                      <span class="text-green-500">Selected</span>
-                    </div>
-                  </div>
-                  <!-- Seat List -->
-                  <div class="py-6">
-                    <div class="flex items-center justify-end">
-                      <p class="py-2 px-6 rounded-lg bg-gray-200 inline-block">
-                        <img src="./images/wheel.svg" alt="">
-                      </p>
-                    </div>
-                    <div class="grid grid-cols-5 gap-7 mt-4 font-[inter]">
-                      <p class="py-2 px-3 font-semibold text-gray-500">A</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">B</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B4</button>
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">C</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">D</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">E</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">F</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F4</button>
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">G</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">H</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H4</button>
-
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">I</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I4</button>
-
-                      <p class="py-2 px-3 font-semibold text-gray-500">J</p>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J1</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J2</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J3</button>
-                      <button onclick="selectSeat(this)" class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J4</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-span-1 border-l-2 border-dashed pl-3 font-[inter]">
-                  <h2 class="border-b-2 border-dashed font-semibold pb-2">Select Your Seat</h2>
-                  <div class="bg-gray-100 p-4 rounded-md mt-3">
-                    <div class="flex items-center justify-between border-b-2 border-dashed pb-2 border-gray-300">
-                      <p class="font-semibold">Seat<span class="w-6 inline-block text-center text-sm h-4 rounded-full bg-green-400 text-white">0</span></p>
-                      <span class="font-semibold">Class</span>
-                      <span class="font-semibold">Price</span>
-                    </div>
-                    <div class="border-b-2 border-gray-300 border-dashed py-2">
-                      <h2 class="text-red-500 font-semibold text-xl text-center">Lorem, ipsum dolor.</h2>
-                    </div>
-                    <div>
-                      <div class="font-semibold py-2 flex items-center justify-between">
-                        <span>Total price</span>
-                        <p>BDT: <span>***</span></p>
-                      </div>
-                      
-                      <div class="rounded-md gap-1 bg-white flex items-center ">
-                        <input type="text" id="apply" class="w-5/6 rounded-md p-2 pl-3 focus:outline-none" placeholder="Have any coupon" />
-                        <button class="bg-green-500 text-white py-1 px-2 rounded-md mr-2 text-sm">Apply</button>
-                      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="End-to-End Travel with P Paribahan">
+  <meta name="keywords" content="bus, ticket-cupon, Ticket">
+  <!-- Google_fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Daisy-UI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>P Paribahan | Ticket</title>
   
-                      <div class="font-semibold py-2 flex items-center justify-between">
-                        <span>Grand total</span>
-                        <p>BDT: <span>***</span></p>
-                      </div>
-                  </div>
-                  </div>
-                  <div class="p-4 rounded-md mt-3">
-                    <label class="form-control w-full max-w-xs">
-                      <div class="label">
-                        <span class="font-bold">Passenger Name*</span>
-                      </div>
-                      <input type="text" placeholder="Enter your name" class="input input-bordered w-full max-w-xs" />
-                    </label>
-                    <label class="form-control w-full max-w-xs">
-                      <div class="label">
-                        <span class="font-bold">Phone Number*</span>
-                      </div>
-                      <input type="number" placeholder="Enter your phone number" class="input input-bordered w-full max-w-xs" />
-                    </label>
-                    <label class="form-control w-full max-w-xs">
-                      <div class="label">
-                        <span class="font-bold">Email ID*</span>
-                      </div>
-                      <input type="email" placeholder="Enter your email id" class="input input-bordered w-full max-w-xs" />
-                    </label>
-                    <button onclick="my_modal_5.showModal()"open modal class="btn w-full text-white bg-green-500 py-2 px-4 rounded-lg my-3">Next</button>
-                    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                      <div class="modal-box">
-                        <div class="flex items-center justify-center mb-2"><img class="w-20" src="./images/success.png" alt=""></div>
-                        <h3 class="text-lg font-bold text-green-600 text-center">Success</h3>
-                        <p class="py-3 font-semibold text-center">Thank you for Booking Our Bus Seats. We are working hard to find the best service and deals for you.</p>
-                        <p class="text-gray-400 text-center">Shortly you will find a confirmation in your email.</p>
-                        <div class="flex items-center justify-center mt-4">
-                          <form method="dialog ">
-                            <!-- if there is a button in form, it will close the modal -->
-                            <button class="btn px-14 rounded-3xl bg-green-500 text-white">Continue</button>
-                          </form>
-                        </div>
-                      </div>
-                    </dialog>
-                    <div class="flex text-sm font-semibold items-center justify-around text-gray-600">
-                      <a class="underline" href="#">Terms & Condition</a>
-                      <a class="underline" href="#">Cancellation Policy</a>
-                    </div>
-                  </div>
+  <script>
+    module.exports = {
+      content: [],
+      theme: {
+        extend: {
+          fontFamily: {
+            'raleway': "Raleway",
+            'inter': "Inter",
+          },
+          colors: {
+            "primay-color": "#eee",
+          },
+        },
+      },
+      plugins: [],
+    };
+  </script>
+</head>
+
+<body class="font-[raleway] text-primay-color">
+  <header class="py-5">
+    <nav class="relative w-11/12 md:w-10/12 mx-auto flex justify-between items-center px-4  sm:px-0">
+      <h3 class="font-bold text-2xl md:text-3xl">P-Ticket</h3>
+      <ul class="hidden md:visible md:flex items-center gap-6 text-lg capitalize font-semibold">
+        <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">home</a></li>
+        <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">about</a></li>
+        <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">destination</a></li>
+        <li><a class="hover:text-green-500 transition-colors duration-200 ease-out" href="#">search</a></li>
+      </ul>
+      <div class="flex items-center gap-2">
+        <button class="flex items-center gap-2 px-3 md:py-1 md:px-4 rounded-md bg-green-100 border border-green-400">
+          <span class="text-green-600 text-lg font-semibold">Bus</span><img class="w-5 pt-1" src="./images/bus-icon.png"
+            alt="" />
+        </button>
+        <div class="relative">
+          <button id="open_menu" class="md:hidden py-1 px-3 rounded-md bg-green-100 border border-green-400"><span
+              class="">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+              </svg>
+            </span>
+          </button>
+          <button id="close_menu"
+            class="hidden absolute left-0 py-1 px-3 rounded-md bg-green-100 border border-green-400"><span
+              class=""></span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+            </span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile_menu" class="hidden absolute right-0 top-12 w-11/12 rounded-md bg-base-200 p-4">
+        <ul class="flex flex-col items-center gap-2 text-lg capitalize font-semibold">
+          <li class="w-full text-center"><a
+              class="rounded-md bg-green-500 py-1 block hover:bg-green-400 transition-colors duration-200 ease-out"
+              href="#">home</a></li>
+          <li class="w-full text-center"><a
+              class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out"
+              href="#">about</a></li>
+          <li class="w-full text-center"><a
+              class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out"
+              href="#">destination</a></li>
+          <li class="w-full text-center"><a
+              class="rounded-md block bg-green-500 py-1 text-slate-700 hover:bg-green-400 transition-colors duration-200 ease-out"
+              href="#">search</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="py-10">
+      <div class="hero w-11/12 sm:w-10/12 lg:w-9/12 mx-auto">
+        <div class="bg-opacity-60">
+          <img class="w-full" src="./images/banner.png" alt="">
+        </div>
+        <div class="hero-content text-neutral-content text-center">
+          <div class="py-10">
+            <h1 class="mb-5 text-xl sm:text-2xl md:text-3xl lg:text-5xl font-bold">End-to-End Travel with <span
+                class="text-green-400">P Paribahan</span></h1>
+            <p class="mb-5">
+              Yes, you can run unit tests and view the results directly within the app. The integrated testing features
+              allow for a streamlined .
+            </p>
+            <button class="rounded-lg text-stone-800 py-2 font-semibold px-4 bg-green-400 border-none">Buy
+              Tickets</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="w-9/12 md:w-8/12 mx-auto hidden sm:block -mt-20 relative z-10">
+      <div class="grid grid-cols-3 gap-5">
+
+        <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
+          <img class="w-10" src="./images/people.png" alt="">
+          <div>
+            <h2 class="text-2xl font-bold">500k+</h2>
+            <p class="font-semibold text-gray-500">Registered users</p>
+          </div>
+        </div>
+
+        <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
+          <img class="w-10" src="./images/ticket-cupon.png" alt="">
+          <div>
+            <h2 class="text-2xl font-bold">1.7 Lacks</h2>
+            <p class="font-semibold text-gray-500">Ticket sold</p>
+          </div>
+        </div>
+
+        <div class="flex items-center border gap-4 p-3 bg-white rounded-lg">
+          <img class="w-10" src="./images/stoppage.png" alt="">
+          <div>
+            <h2 class="text-2xl font-bold">80k+</h2>
+            <p class="font-semibold text-gray-500">Rental partners</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Best offer -->
+    <section>
+      <div class="w-11/12 sm:w-10/12 md:w-8/12 mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 mt-6 ">Best offers for you</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="relative flex items-center justify-between rounded-lg bg-orange-300 p-5">
+            <div>
+              <h3 class="font-bold text-2xl">15% OFF</h3>
+              <p class="font-semibold">on your next purchase</p>
+              <span class="text-sm text-gray-600">use by January 2024</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold">NEW 15</h3>
+              <span class="text-gray-500">Coupon code</span>
+            </div>
+            <div class="flex flex-col items-center justify-center absolute right-36 h-full gap-4">
+              <div class="w-7 h-7 rounded-full bg-white absolute -top-4"></div>
+              <div class="border-2 border-white border-dashed absolute h-full"></div>
+              <div class="w-7 h-7 rounded-full bg-white absolute -bottom-4"></div>
+            </div>
+          </div>
+
+          <div class="relative flex items-center justify-between rounded-lg bg-pink-400 p-5">
+            <div class="">
+              <h3 class="font-bold text-2xl">20% OFF</h3>
+              <p class="font-semibold">on your next purchase</p>
+              <span class="text-sm text-gray-600">use by January 2024</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold">Couple 20</h3>
+              <span class="text-gray-500">Coupon code</span>
+            </div>
+            <div class="flex flex-col items-center justify-center absolute right-36 h-full gap-4">
+              <div class="w-7 h-7 rounded-full bg-white absolute -top-4"></div>
+              <div class="border-2 border-white border-dashed absolute h-full"></div>
+              <div class="w-7 h-7 rounded-full bg-white absolute -bottom-4"></div>
+            </div>
+          </div>
+        </div>
+        <div class="my-4 flex items-center justify-center"><button
+            class="py-2 px-4 font-semibold text-green-500 rounded-lg border border-green-400">See All Offers</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- P.H paribahan -->
+    <section class="bg-gray-100 border-t-2 rounded-t-3xl border-t-green-500 py-12">
+      <div class="w-11/12 sm:w-10/12 md:w-9/12 mx-auto">
+        <h2 class="text-center font-bold text-3xl">P.H Paribahan</h2>
+        <p class="text-center mt-2 text-gray-600">Yes, you can run unit tests and view the results directly within the
+          app. The integrated <br> testing features allow for a streamlined .</p>
+        <div class="bg-white relative rounded-xl p-5 pr-7 flex items-center justify-between mt-8 gap-3">
+          <div class="">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center gap-3">
+                <img class="w-16" src="./images/bus-logo.png" alt="">
+                <div>
+                  <h4 class="font-bold text-xl mb-1">GreenLine Paribahan</h4>
+                  <p class="text-gray-600">Coach-009-WEB | AC_Business</p>
+                </div>
+              </div>
+              <div class="flex font-semibold items-center py-2 px-3 rounded-md text-green-600 bg-green-200 gap-1">
+                <img class="w-6" src="./images/seat-green.png" alt="">
+                <span>40</span>
+                <span>Seats left</span>
+              </div>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-5">
+              <div class="flex items-center justify-between border-b-2 border-dashed py-3">
+                <span>Route</span>
+                <span>Dhaka-Sylhet</span>
+              </div>
+              <div class="flex items-center justify-between border-b-2 border-dashed py-3">
+                <span>Departure Time</span>
+                <span>8.00 pm</span>
+              </div>
+              <div class="flex items-center gap-3 mt-4">
+                <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
+                  Boarding Point-Laxmipur
+                </div>
+                <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
+                  Boarding Point-Laxmipur
+                </div>
+                <div class="py-2 px-4 font-semibold rounded-md bg-gray-200">
+                  Boarding Point-Laxmipur
                 </div>
               </div>
             </div>
-          </section>
-    </main>
+          </div>
 
-    <script src="./app.js"></script>
-  </body>
+          <div class="flex flex-col items-center gap-1 justify-center">
+            <img class="w-8" src="./images/fare.png" alt="">
+            <h4 class="text-xl font-bold">550 Taka</h4>
+            <span class="text-gray-600">Per Seat</span>
+
+          </div>
+
+          <!--  -->
+          <div class="hidden xl:block absolute right-1/4 h-full">
+            <span class="w-8 h-8 rounded-full bg-gray-100 absolute z-10 -top-4"></span>
+            <p class="border-2 border-dashed absolute bg-gray-50 left-3 h-full"></p>
+            <span class="w-8 h-8 rounded-full bg-gray-100 absolute z-10 -bottom-4"></span>
+
+          </div>
+        </div>
+
+
+
+        <div class="bg-white p-6 rounded-lg grid grid-cols-3 gap-8 mt-10">
+          <div class="col-span-2">
+            <h3 class="capitalize font-semibold border-b-2 border-dashed pb-3">Select your seat</h3>
+            <div class="border-b-2 border-dashed py-3 flex items-center justify-between">
+              <div class="flex items-center gap-1">
+                <img src="./images/seat-gray.png" alt="">
+                <span class="text-gray-500">Available</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <img src="./images/seat-green-filled.png" alt="">
+                <span class="text-green-500">Selected</span>
+              </div>
+            </div>
+            <!-- Seat List -->
+            <div class="py-6">
+              <div class="flex items-center justify-end">
+                <p class="py-2 px-6 rounded-lg bg-gray-200 inline-block">
+                  <img src="./images/wheel.svg" alt="">
+                </p>
+              </div>
+              <div class="grid grid-cols-5 gap-7 mt-4 font-[inter]">
+                <p class="py-2 px-3 font-semibold text-gray-500">A</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">A4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">B</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">B4</button>
+
+                <p class="py-2 px-3 font-semibold text-gray-500">C</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">C4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">D</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">D4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">E</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">E4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">F</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">F4</button>
+
+                <p class="py-2 px-3 font-semibold text-gray-500">G</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">G4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">H</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">H4</button>
+
+
+                <p class="py-2 px-3 font-semibold text-gray-500">I</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">I4</button>
+
+                <p class="py-2 px-3 font-semibold text-gray-500">J</p>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J1</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J2</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J3</button>
+                <button onclick="selectSeat(this)"
+                  class="py-2 px-6 rounded-lg bg-gray-200 hover:bg-black hover:text-white transition-all duration-200 font-semibold text-gray-600 active:scale-95">J4</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-1 border-l-2 border-dashed pl-3 font-[inter]">
+            <h2 class="border-b-2 border-dashed font-semibold pb-2">Select Your Seat</h2>
+            <div class="bg-gray-100 p-4 rounded-md mt-3">
+              <div class="flex items-center justify-between border-b-2 border-dashed pb-2 border-gray-300">
+                <p class="font-semibold">Seat<span
+                    class="w-6 inline-block text-center text-sm h-4 rounded-full bg-green-400 text-white">0</span></p>
+                <span class="font-semibold">Class</span>
+                <span class="font-semibold">Price</span>
+              </div>
+              <div class="border-b-2 border-gray-300 border-dashed py-2">
+                <h2 class="text-red-500 font-semibold text-xl text-center">Lorem, ipsum dolor.</h2>
+              </div>
+              <div>
+                <div class="font-semibold py-2 flex items-center justify-between">
+                  <span>Total price</span>
+                  <p>BDT: <span>***</span></p>
+                </div>
+
+                <div class="rounded-md gap-1 bg-white flex items-center ">
+                  <input type="text" id="apply" class="w-5/6 rounded-md p-2 pl-3 focus:outline-none"
+                    placeholder="Have any coupon" />
+                  <button class="bg-green-500 text-white py-1 px-2 rounded-md mr-2 text-sm">Apply</button>
+                </div>
+
+                <div class="font-semibold py-2 flex items-center justify-between">
+                  <span>Grand total</span>
+                  <p>BDT: <span>***</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="p-4 rounded-md mt-3">
+              <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="font-bold">Passenger Name*</span>
+                </div>
+                <input type="text" placeholder="Enter your name" class="input input-bordered w-full max-w-xs" />
+              </label>
+              <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="font-bold">Phone Number*</span>
+                </div>
+                <input type="number" placeholder="Enter your phone number"
+                  class="input input-bordered w-full max-w-xs" />
+              </label>
+              <label class="form-control w-full max-w-xs">
+                <div class="label">
+                  <span class="font-bold">Email ID*</span>
+                </div>
+                <input type="email" placeholder="Enter your email id" class="input input-bordered w-full max-w-xs" />
+              </label>
+              <button onclick="my_modal_5.showModal()" open modal
+                class="btn w-full text-white bg-green-500 py-2 px-4 rounded-lg my-3">Next</button>
+              <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                  <div class="flex items-center justify-center mb-2"><img class="w-20" src="./images/success.png"
+                      alt=""></div>
+                  <h3 class="text-lg font-bold text-green-600 text-center">Success</h3>
+                  <p class="py-3 font-semibold text-center">Thank you for Booking Our Bus Seats. We are working hard to
+                    find the best service and deals for you.</p>
+                  <p class="text-gray-400 text-center">Shortly you will find a confirmation in your email.</p>
+                  <div class="flex items-center justify-center mt-4">
+                    <form method="dialog ">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn px-14 rounded-3xl bg-green-500 text-white">Continue</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
+              <div class="flex text-sm font-semibold items-center justify-around text-gray-600">
+                <a class="underline" href="#">Terms & Condition</a>
+                <a class="underline" href="#">Cancellation Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+
 </html>
